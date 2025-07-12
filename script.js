@@ -19,7 +19,7 @@ const sampleSkills = [
 const sampleProfiles = [
     { 
         id: 1, 
-        name: 'Marc Demo', 
+        name: 'John', 
         skills: ['Photography', 'Video Editing'], 
         rating: 4.8, 
         reviews: 89,
@@ -29,7 +29,7 @@ const sampleProfiles = [
     },
     { 
         id: 2, 
-        name: 'Jane Smith', 
+        name: 'Smith', 
         skills: ['Web Development', 'UI/UX'], 
         rating: 4.9, 
         reviews: 123,
@@ -39,7 +39,7 @@ const sampleProfiles = [
     },
     { 
         id: 3, 
-        name: 'Joe Miller', 
+        name: 'Miller', 
         skills: ['Cooking', 'Nutrition'], 
         rating: 4.7, 
         reviews: 67,
