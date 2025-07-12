@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Swap Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Skill Swap Platform</h1>
+            <div class="nav-menu">
+                <button class="nav-btn active" data-screen="home">Home</button>
+                <button class="nav-btn" data-screen="browse">Browse</button>
+                <button class="nav-btn" data-screen="profile">Profiles</button>
+                <button class="nav-btn" data-screen="contact">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <div class="hero-section">
+                <h1 class="hero-title">Skill Swap Platform</h1>
+                <p class="hero-subtitle">Connect with others to share and learn skills</p>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <h2>Browse Skills</h2>
+                    <button class="btn btn-primary" onclick="showScreen('login')">Login</button>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="home-search" placeholder="Search skills..." class="search-input">
+                    </div>
+                </div>
+
+                <div id="home-skills" class="skills-grid">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-link" onclick="showScreen('browse')">View All Skills</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2>Skill Swap Platform</h2>
+                        <div class="tab-container">
+                            <button class="tab-btn active">Login</button>
+                            <button class="tab-btn">Sign up</button>
+                        </div>
+                    </div>
+
+                    <form id="login-form" class="login-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Login</button>
+
+                        <div class="text-center">
+                            <a href="#" class="link">Forgot username/password</a>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-link" onclick="showScreen('home')">← Back to Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Browse Screen -->
+        <div id="browse-screen" class="screen">
+            <div class="screen-header">
+                <h2>Browse Skills</h2>
+                <button class="btn btn-link" onclick="showScreen('home')">Home</button>
+            </div>
+
+            <div class="content-card">
+                <div class="filter-container">
+                    <select id="category-filter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="Creative">Creative</option>
+                        <option value="Tech">Tech</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Education">Education</option>
+                        <option value="Health">Health</option>
+                    </select>
+                    
+                    <div class="search-box flex-1">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="browse-search" placeholder="Search skills..." class="search-input">
+                    </div>
+                </div>
+
+                <div id="browse-skills" class="skills-grid">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Screen -->
+        <div id="profile-screen" class="screen">
+            <div class="screen-header">
+                <h2>User Profiles</h2>
+                <button class="btn btn-link" onclick="showScreen('home')">Home</button>
+            </div>
+
+            <div class="content-card">
+                <div class="profiles-section">
+                    <h3>Featured Profiles</h3>
+                    <div id="featured-profiles" class="profiles-grid">
+                        <!-- Profiles will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="profile-detail">
+                    <h3>Marc Demo Profile</h3>
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="profile-info">
+                                <h4>Marc Demo</h4>
+                                <p>Professional Photographer</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8 (89 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <h5>Skills Offered</h5>
+                                <p>Photography, Video Editing, Adobe Creative Suite</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Skills Wanted</h5>
+                                <p>Web Development, Marketing, Business Strategy</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Rating and Feedback</h5>
+                                <p>Excellent teacher, very patient and knowledgeable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Screen -->
+        <div id="contact-screen" class="screen">
+            <div class="contact-container">
+                <div class="contact-card">
+                    <h2>Send Request</h2>
+                    
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="offered-skill">Choose one of your offered skills</label>
+                            <select id="offered-skill" name="offered-skill" required>
+                                <option value="">Select skill...</option>
+                                <option value="Photography">Photography</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Cooking">Cooking</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wanted-skill">Choose one of their wanted skills</label>
+                            <select id="wanted-skill" name="wanted-skill" required>
+                                <option value="">Select skill...</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Business Strategy">Business Strategy</option>
+                                <option value="Design">Design</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Request</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Submit</button>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-link" onclick="showScreen('home')">← Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="success-message" class="message success hidden">
+        <i class="fas fa-check-circle"></i>
+        <span>Operation completed successfully!</span>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" class="message error hidden">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>An error occurred. Please try again.</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
